@@ -1,0 +1,68 @@
+.home-container {
+  display: flex;
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la pantalla */
+}
+
+.sidebar {
+  background-color: #e0f7fa; /* Un color celeste claro como en tu wireframe */
+  width: 80px; /* Ancho de la barra lateral */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logo {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation a {
+  margin-bottom: 20px;
+  color: #00bcd4; /* Un color celeste más oscuro para los íconos */
+}
+
+.navigation a mat-icon {
+  font-size: 24px;
+}
+
+.content {
+  flex-grow: 1; /* Ocupa el resto del espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/images/tu-imagen-de-fondo.jpg'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+}
+
+.welcome-message {
+  font-size: 3em;
+  color: #1976d2; /* Un color azul para el mensaje de bienvenida */
+  margin-bottom: 30px;
+}
+
+.recommendation-box {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.recommendation-box p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.recommendation-box button {
+  font-size: 1em;
+}
