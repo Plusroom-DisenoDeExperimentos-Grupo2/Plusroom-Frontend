@@ -1,0 +1,87 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 50%;
+  margin: 30px auto;
+}
+
+.title {
+  color: rgb(27, 80, 150);
+}
+
+.form-fields {
+  min-width: 150px;
+  max-width: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.checkbox-container {
+  background-color: rgba(173, 216, 230, 0.658);
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6px;
+  margin: 0 0 16px 0;
+}
+
+.checkbox:hover {
+  background-color: rgb(173, 216, 230);
+}
+
+.column-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .column-inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-container {
+    max-width: 80%;
+    padding: 10px;
+  }
+
+  .medium-width {
+    width: 100%;
+  }
+
+}
+
+/* image ->drag & drop */
+.upload-container {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.upload-container.dragover {
+  border-color: #3f51b5;
+  background-color: #f0f0ff;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

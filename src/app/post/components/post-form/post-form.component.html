@@ -1,0 +1,121 @@
+<div>
+    <div class="form-container">
+
+        <h1 class="title">{{formTypeTitle}}</h1>
+
+        <form id="postForm" [formGroup]="postForm" (submit)="onSubmit()" class="form-fields">
+            <mat-form-field class="input-field">
+                <mat-label>Título</mat-label>
+                <input matInput id="title" formControlName="title">
+                <mat-error
+                    *ngIf="postForm.get('title')?.invalid && (postForm.get('title')?.dirty || postForm.get('title')?.touched)">
+                    Título requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="input-field">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput id="description" formControlName="description" required></textarea>
+                <mat-error
+                    *ngIf="postForm.get('description')?.invalid && (postForm.get('description')?.dirty || postForm.get('description')?.touched)">
+                    Descripción requerida
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Begins Characteristics -->
+            <mat-form-field class="input-field">
+                <mat-label>Habitaciones</mat-label>
+                <input matInput id="rooms" formControlName="rooms" required>
+                <mat-error
+                    *ngIf="postForm.get('rooms')?.invalid && (postForm.get('rooms')?.dirty || postForm.get('rooms')?.touched)">
+                    Número de habitaciones requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="input-field">
+                <mat-label>Baños</mat-label>
+                <input matInput id="bathrooms" formControlName="bathrooms" required>
+                <mat-error
+                    *ngIf="postForm.get('bathrooms')?.invalid && (postForm.get('bathrooms')?.dirty || postForm.get('bathrooms')?.touched)">
+                    Número de baños requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-label>Características</mat-label>
+            <div class="checkbox-container">
+                <div class="checkbox">
+                    <mat-checkbox [checked]="true" formControlName="pets">Acepta mascotas</mat-checkbox>
+                </div>
+                <div class="checkbox">
+                    <mat-checkbox [checked]="true" formControlName="smoking">Permite fumar</mat-checkbox>
+                </div>
+            </div>
+
+            <!-- Ends Characteristics -->
+
+
+
+            <!---Begins Image -> drag & drop ------------------------------------------------------------>
+            <div class="upload-container" (drop)="onDrop($event)" (dragover)="onDragOver($event)"
+                (dragleave)="onDragLeave($event)" [class.dragover]="isDragOver" *ngIf="!previewUrl">
+                <p>Arrastra una imagen aquí <br><br>o<br></p>
+                <input type="file" (change)="onFileSelected($event)" accept="image/*" hidden #fileInput />
+                <button mat-flat-button type="button" (click)="fileInput.click()">
+                    Selecciona una imagen
+                </button>
+            </div>
+
+            <div *ngIf="previewUrl">
+                <h4>Vista previa:</h4>
+                <img [src]="previewUrl" alt="Vista previa" style="max-width: 100%; max-height: 100px" />
+                <br />
+                <button mat-flat-button type="button" (click)="removeImage()">Eliminar imagen</button>
+            </div>
+            <!---  Ends Image -> drag & drop ------------------------------------------------------------>
+
+            <div class="column-inputs">
+
+                <!-- Price -->
+                <mat-form-field class="input-field price-field">
+                    <mat-label>Precio</mat-label>
+                    <input matInput id="price" formControlName="price" (blur)="updateErrorMessage()" required>
+                    <mat-error
+                        *ngIf="postForm.get('price')?.invalid && (postForm.get('price')?.dirty || postForm.get('price')?.touched)">
+                        {{errorMessage()}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Category -->
+                <mat-form-field class="input-field">
+                    <mat-label>Categoría</mat-label>
+                    <mat-select id="category" formControlName="category" required>
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let category of categories;" [value]="category.value">
+                            {{category.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error
+                        *ngIf="postForm.get('category')?.invalid && (postForm.get('category')?.dirty || postForm.get('category')?.touched)">
+                        Categoría requerida
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <!-- Location -->
+            <mat-form-field class="input-field">
+                <mat-label>Ubicación</mat-label>
+                <input matInput id="location" formControlName="location" required>
+                <mat-error
+                    *ngIf="postForm.get('location')?.invalid && (postForm.get('location')?.dirty || postForm.get('location')?.touched)">
+                    Ubicación requerida
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Submit button -->
+            <div class="button-container">
+                <button mat-flat-button type="submit" *ngIf="formFieldType === 'create'">Crear Publicación</button>
+                <button mat-flat-button type="submit" *ngIf="formFieldType === 'edit'">Editar</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
