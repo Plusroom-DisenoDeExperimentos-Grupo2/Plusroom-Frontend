@@ -1,0 +1,144 @@
+/* Contenedor principal */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  height: 100vh;
+  background-color: #6db6bb;
+  padding: 0 20px;
+}
+
+/* Sección izquierda: logo + texto + botón */
+.logo-area {
+  text-align: center;
+}
+
+.logo-area img {
+  width: auto;
+  margin-bottom: 24px;
+}
+
+/* Texto legal con enlaces */
+.policy-text {
+  font-size: 13px;
+  color: #003f5c;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+.policy-text a {
+  color: #2a5b8c;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.policy-text a:hover {
+  color: #1a3e65;
+  text-decoration: none;
+}
+
+/* Link a login */
+.auth-link-text {
+  font-size: 14px;
+  color: #003f5c;
+  margin-bottom: 16px;
+}
+
+.auth-link {
+  color: #2a5b8c;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #1a3e65;
+  text-decoration: none;
+}
+
+/* Botón */
+.auth-button {
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(42, 91, 140, 0.7);
+  color: white;
+  margin-top: 16px;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Formulario */
+.form-area {
+  background-color: #ecf0f3;
+  padding: 32px;
+  border-radius: 20px;
+  width: 320px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas */
+label {
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  background-color: transparent;
+  font-size: 18px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-bottom-color: #2a5b8c;
+}
+
+
+
+/* 🔁 Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column; /* 👈 Ya no usamos reverse */
+    padding: 40px 20px;
+    gap: 40px;
+    height: auto;
+  }
+
+  .logo-area img {
+    max-width: 140px;
+  }
+
+  .form-area {
+    width: 100%;
+    max-width: 360px;
+    padding: 24px;
+  }
+
+  .auth-button {
+    width: 100%;
+  }
+}
+

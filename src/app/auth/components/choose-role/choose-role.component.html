@@ -1,0 +1,27 @@
+<div class="choose-container">
+  <h2>Elige tu tipo de cuenta</h2>
+
+  <div class="options">
+    <div
+      class="option-card"
+      [class.selected]="selectedRole === 'landlord'"
+      (click)="selectRole('landlord')"
+    >
+      <img src="/assets/images/icons/lanlord.png" alt="Arrendador" />
+      <span>Arrendador</span>
+    </div>
+
+    <div
+      class="option-card"
+      [class.selected]="selectedRole === 'tenant'"
+      (click)="selectRole('tenant')"
+    >
+      <img src="assets/images/icons/tenant.png" alt="Arrendatario" />
+      <span>Arrendatario</span>
+    </div>
+  </div>
+
+  <button class="continue-btn" [disabled]="!selectedRole" (click)="continue()">
+    Continuar
+  </button>
+</div>

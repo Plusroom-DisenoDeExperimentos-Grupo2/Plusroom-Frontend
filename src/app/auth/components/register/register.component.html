@@ -1,0 +1,31 @@
+<div class="auth-container">
+  <div class="logo-area">
+    <img src="/assets/images/logo/door-icon-2.png" alt="Logo" />
+
+    <p class="policy-text">
+      Al registrarte, aceptas nuestras
+      <a href="https://www.freeprivacypolicy.com/live/141d55ef-a8ab-4854-86fd-4c7a19ba2490" target="_blank">Condiciones de uso</a> y
+      <a href="https://www.freeprivacypolicy.com/live/141d55ef-a8ab-4854-86fd-4c7a19ba2490" target="_blank">Políticas de privacidad</a>.
+    </p>
+
+    <p class="auth-link-text">
+      ¿Ya tienes una cuenta?
+      <span class="auth-link" (click)="goToLogin()">Iniciar sesión</span>
+    </p>
+
+    <button class="auth-button" (click)="onSubmit()">REGISTER</button>
+  </div>
+
+  <form [formGroup]="registerForm" class="form-area">
+    <label>Name</label>
+    <input formControlName="name" />
+    <label>Last name</label>
+    <input formControlName="lastName" />
+    <label>Email</label>
+    <input formControlName="email" type="email" />
+    <label>Password</label>
+    <input formControlName="password" type="password" />
+    <label>Confirm Password</label>
+    <input formControlName="confirmPassword" type="password" />
+  </form>
+</div>
